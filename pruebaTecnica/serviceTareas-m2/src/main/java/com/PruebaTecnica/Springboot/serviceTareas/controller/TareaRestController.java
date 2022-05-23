@@ -42,6 +42,11 @@ public class TareaRestController {
         return new ResponseEntity<>(obtenerTarea.obtenerUna(id),HttpStatus.OK);
     }
 
+    @GetMapping("/user/{id}")
+    ResponseEntity<List<Tarea>> obtenerTareaByidUsuario(@PathVariable Long id){
+        return new ResponseEntity<>(obtenerTarea.obtenerTareaByidUsuario(id),HttpStatus.OK);
+    }
+
     @PutMapping("/{id}")
     ResponseEntity<Tarea> actualizarTarea(@PathVariable long id,@RequestBody Tarea nuevaTarea){
         return new ResponseEntity<>(actualizarTarea.actualizar(id,nuevaTarea),HttpStatus.OK);

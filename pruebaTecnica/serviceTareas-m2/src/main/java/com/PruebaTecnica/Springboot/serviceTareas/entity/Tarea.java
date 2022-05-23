@@ -18,6 +18,7 @@ public class Tarea {
     private int tiempoEstimadoMin;
     private boolean isCompleta;
     private String categoria;
+    private Long idUsuario;
 
 
 
@@ -28,12 +29,13 @@ public class Tarea {
         this.id = id;
     }
 
-    public Tarea(String descripcion, LocalDate fechaCreacion, int tiempoEstimadoMin, boolean isCompleta, String categoria) {
+    public Tarea(String descripcion, LocalDate fechaCreacion, int tiempoEstimadoMin, boolean isCompleta, String categoria, long idUsuario) {
         this.descripcion = descripcion;
         this.fechaCreacion = fechaCreacion;
         this.tiempoEstimadoMin = tiempoEstimadoMin;
         this.isCompleta = isCompleta;
         this.categoria = categoria;
+        this.idUsuario = idUsuario;
     }
 
     public Tarea(long id, String descripcion, LocalDate fechaCreacion, int tiempoEstimadoMin, boolean isCompleta, String categoria) {
@@ -43,6 +45,14 @@ public class Tarea {
         this.tiempoEstimadoMin = tiempoEstimadoMin;
         this.isCompleta = isCompleta;
         this.categoria = categoria;
+    }
+
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public long getId() {

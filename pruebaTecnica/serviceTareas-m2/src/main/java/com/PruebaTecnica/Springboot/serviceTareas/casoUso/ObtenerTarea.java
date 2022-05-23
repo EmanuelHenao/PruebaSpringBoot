@@ -21,4 +21,8 @@ public class ObtenerTarea {
     public Tarea obtenerUna(Long id) {
         return tareaService.obtenerUna(id);
     }
+
+    public List<Tarea> obtenerTareaByidUsuario(Long id) {
+        return tareaService.obtenerTareaByidUsuario(id);
+    }
 }

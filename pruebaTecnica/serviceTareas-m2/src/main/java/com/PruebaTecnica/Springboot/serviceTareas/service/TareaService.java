@@ -29,6 +29,10 @@ public class TareaService {
                 );
     }
 
+    public List<Tarea> obtenerTareaByidUsuario(Long id) {
+        return tareaRepository.findByIdUsuario(id);
+    }
+
     public Tarea actualizar(long id, Tarea nuevaTarea) {
         return tareaRepository.findById(id)
                 .map(tarea -> {
@@ -48,6 +52,8 @@ public class TareaService {
     public void eliminar(long id) {
         tareaRepository.delete(new Tarea(id));
     }
+
+
 
 
     //metodos de crud
