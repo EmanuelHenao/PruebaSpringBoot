@@ -5,6 +5,7 @@ import com.PruebaTecnica.Springboot.serviceUsuarios.exeption.UsuarioNotFoundExce
 import com.PruebaTecnica.Springboot.serviceUsuarios.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -30,6 +31,10 @@ public class UsuarioService {
                 );
     }
 
+    public List<Usuario> obtenerByFechaNacimientoBetween(LocalDate inicio, LocalDate fin) {
+        return usuarioRepository.findByFechaNacimientoBetween(inicio,fin);
+    }
+
     public Usuario actualizar(long id, Usuario nuevoUsu) {
         return usuarioRepository.findById(id)
                 .map(usuario -> {
@@ -49,6 +54,8 @@ public class UsuarioService {
     public void eliminarUsuario(long id) {
         usuarioRepository.delete(new Usuario(id));
     }
+
+
 
 
     //metodos de crud

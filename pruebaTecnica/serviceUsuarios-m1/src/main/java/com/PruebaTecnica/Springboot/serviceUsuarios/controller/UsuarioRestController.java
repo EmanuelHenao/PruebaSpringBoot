@@ -5,10 +5,12 @@ import com.PruebaTecnica.Springboot.serviceUsuarios.casoUso.CrearUsuario;
 import com.PruebaTecnica.Springboot.serviceUsuarios.casoUso.EliminarUsuario;
 import com.PruebaTecnica.Springboot.serviceUsuarios.casoUso.ObtenerUsuario;
 import com.PruebaTecnica.Springboot.serviceUsuarios.entity.Usuario;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -40,6 +42,11 @@ public class UsuarioRestController {
     @GetMapping("/{id}")
     ResponseEntity<Usuario> obtenerUsuarioByid(@PathVariable Long id){
         return new ResponseEntity<>(obtenerUsuario.obtenerUsuario(id),HttpStatus.OK);
+    }
+
+    @GetMapping("/rango")
+    ResponseEntity<List<Usuario>> findByFechaNacimientoBetween(@RequestParam String inicio,@RequestParam String fin){
+        return new ResponseEntity<>(obtenerUsuario.obtenerByFechaNacimientoBetween(LocalDate.parse(inicio),LocalDate.parse(fin)),HttpStatus.OK);
     }
 
     @PutMapping("/{id}")

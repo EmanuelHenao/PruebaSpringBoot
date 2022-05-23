@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>serviceUsuarios-m1</module>
+		<module>serviceTareas-m2</module>
 	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
