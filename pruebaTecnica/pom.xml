@@ -6,7 +6,8 @@
     <modules>
         <module>serviceUsuarios-m1</module>
 		<module>serviceTareas-m2</module>
-	</modules>
+        <module>serviceUserTask-m3</module>
+    </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
