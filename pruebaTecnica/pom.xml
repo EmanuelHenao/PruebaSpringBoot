@@ -7,7 +7,8 @@
         <module>serviceUsuarios-m1</module>
 		<module>serviceTareas-m2</module>
         <module>serviceUserTask-m3</module>
-    </modules>
+		<module>eurekaServer</module>
+	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -21,6 +22,7 @@
 	<description>pruebaTecnica Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<spring-cloud.version>2021.0.3-SNAPSHOT</spring-cloud.version>
 	</properties>
 
 
